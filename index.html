@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="pageTitle">Studio Gestor - Software de Gestão para Salões de Beleza</title>
+    
+    <!-- FAVICON: Ícone da aba do navegador -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/jPBB6s3s/logo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Lucide -->
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-purple-700">Studio Gestor</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-purple-700 font-medium" data-lang="navFeatures">Recursos</a>
+                <a href="#pricing" class="text-gray-600 hover:text-purple-700 font-medium" data-lang="navPricing">Preços</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-purple-700 font-medium" data-lang="navTestimonials">Depoimentos</a>
+                <a href="#faq" class="text-gray-600 hover:text-purple-700 font-medium" data-lang="navFaq">FAQ</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                 <!-- Language Selector -->
+                 <div class="relative">
+                     <select id="languageSelector" class="appearance-none bg-gray-100 border border-gray-300 rounded-md py-2 pl-3 pr-8 text-sm leading-tight focus:outline-none focus:bg-white focus:border-purple-500 cursor-pointer">
+                         <option value="pt">🇧🇷 Português</option>
+                         <option value="en">🇺🇸 English</option>
+                         <option value="es">🇪🇸 Español</option>
+                     </select>
+                 </div>
+                <!-- INÍCIO DA ALTERAÇÃO: Botão de assinatura único -->
+                <div class="hidden sm:flex items-center">
+                    <a href="https://pay.hotmart.com/O102157514D" target="_blank" class="cta-button bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 text-sm">Assinar Agora</a>
+                </div>
+                <!-- FIM DA ALTERAÇÃO -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4" data-lang="heroTitle">O Sistema Completo para Gerenciar seu Salão de Beleza</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8" data-lang="heroSubtitle">Agendamentos, clientes, estoque, faturamento e marketing em um só lugar. Simplifique sua gestão e foque no que realmente importa.</p>
+                
+                <!-- INÍCIO DA ALTERAÇÃO: Botão de compra único -->
+                <div class="flex justify-center items-center">
+                    <a href="https://pay.hotmart.com/O102157514D" target="_blank" class="cta-button block w-80 text-center bg-purple-600 text-white font-bold py-4 rounded-lg text-lg hover:bg-purple-700 border-2 border-purple-600 hover:border-purple-700">Assinar Agora</a>
+                </div>
+                <!-- FIM DA ALTERAÇÃO -->
+                
+                <div class="mt-8 flex justify-center">
+                    <a href="https://wa.me/5527988450887?text=Olá!%20Gostaria%20de%20iniciar%20meu%20teste%20gratuito%20de%207%20dias%20do%20Studio%20Gestor." target="_blank" class="cta-button block w-80 text-center bg-white text-purple-700 font-bold py-4 rounded-lg text-lg border-2 border-purple-600 hover:bg-purple-50" data-lang="heroCtaTrial">Testar por 7 Dias Grátis</a>
+                </div>
+
+                <div class="mt-12">
+                     <img src="https://i.ibb.co/nsbCDYCL/telainicial.png" alt="Interface do programa Studio Gestor" class="rounded-2xl shadow-2xl mx-auto border-4 border-white">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang="featuresTitle">Tudo que você precisa para crescer</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto" data-lang="featuresSubtitle">Recursos poderosos e fáceis de usar para levar seu negócio ao próximo nível.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: Agenda -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature1Title">Agenda Inteligente</h3>
+                        <p class="text-gray-600" data-lang="feature1Desc">Organize seus horários, evite conflitos e visualize os compromissos do dia, semana e mês com facilidade.</p>
+                    </div>
+                    <!-- Feature 2: Clientes -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                         <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                         </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature2Title">Gestão de Clientes Completa</h3>
+                        <p class="text-gray-600" data-lang="feature2Desc">Mantenha um histórico detalhado de cada cliente, com contatos, preferências e observações importantes.</p>
+                    </div>
+                    <!-- Feature 3: Estoque -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                         <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-archive"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+                         </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature3Title">Controle de Estoque Automático</h3>
+                        <p class="text-gray-600" data-lang="feature3Desc">Dê baixa automática nos produtos usados em cada serviço e receba alertas de estoque baixo para nunca mais faltar nada.</p>
+                    </div>
+                    <!-- Feature 4: Faturamento -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-big"><path d="M3 3v18h18"/><path d="M7 12h4v4H7z"/><path d="M12 7h4v9h-4z"/><path d="M17 4h4v12h-4z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature4Title">Relatórios Financeiros</h3>
+                        <p class="text-gray-600" data-lang="feature4Desc">Acompanhe seu faturamento diário, semanal e mensal com relatórios claros e precisos para tomar as melhores decisões.</p>
+                    </div>
+                     <!-- Feature 5: Marketing -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                         <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                         </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature5Title">Marketing via WhatsApp</h3>
+                        <p class="text-gray-600" data-lang="feature5Desc">Envie lembretes de agendamento e campanhas promocionais em massa diretamente para o WhatsApp dos seus clientes.</p>
+                    </div>
+                     <!-- Feature 6: Profissionais -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="bg-purple-100 text-purple-700 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-user"><path d="M12 17a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2Z"/><path d="M8 12.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0Z"/><path d="M15 4.5V2H9v2.5"/><path d="M17 4h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-2"/><path d="M5 4H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/><path d="M8 4h8"/><path d="M14.5 17.5a2.5 4.5 0 0 0-5 0"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" data-lang="feature6Title">Gestão de Equipe e Serviços</h3>
+                        <p class="text-gray-600" data-lang="feature6Desc">Cadastre seus profissionais, defina os serviços oferecidos com seus respectivos preços e organize sua operação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang="pricingTitle">Planos flexíveis para seu sucesso</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto" data-lang="pricingSubtitle">Escolha o plano ideal para o seu negócio, com acesso completo a todos os recursos.</p>
+                </div>
+                <div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8 border border-purple-200">
+                    <h3 class="text-2xl font-bold text-center mb-2" data-lang="planName">Plano Completo</h3>
+                    <p class="text-center text-gray-500 mb-6" data-lang="planDesc">Acesso ilimitado a todos os recursos e atualizações.</p>
+                    <div class="text-center mb-6" id="price-block">
+                        <!-- Price will be dynamically inserted here -->
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck1">Clientes ilimitados</span></li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck2">Agendamentos ilimitados</span></li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck3">Controle de estoque</span></li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck4">Relatórios e Faturamento</span></li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck5">Ferramentas de Marketing</span></li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2 text-green-500 mr-3"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-lang="featureCheck6">Atualizações contínuas</span></li>
+                    </ul>
+                    <!-- INÍCIO DA ALTERAÇÃO: Botão de assinatura único -->
+                    <div class="mb-4">
+                        <a href="https://pay.hotmart.com/O102157514D" target="_blank" class="cta-button w-full block text-center bg-purple-600 text-white font-bold py-3 rounded-lg text-lg hover:bg-purple-700">
+                            Assinar Agora
+                        </a>
+                    </div>
+                    <!-- FIM DA ALTERAÇÃO -->
+                    
+                    <a href="https://wa.me/5527988450887?text=Olá!%20Gostaria%20de%20iniciar%20meu%20teste%20gratuito%20de%207%20dias%20do%20Studio%20Gestor." target="_blank" class="cta-button w-full block text-center bg-gray-100 text-purple-700 font-bold py-3 rounded-lg text-lg border-2 border-gray-200 hover:bg-gray-200" data-lang="trialButton">Testar 7 Dias Grátis</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang="testimonialsTitle">Amado por donos de salão em todo o país</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto" data-lang="testimonialsSubtitle">Veja o que nossos clientes estão dizendo sobre o Studio Gestor.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://i.pravatar.cc/150?img=1" alt="Foto de Juliana S.">
+                            <div>
+                                <p class="font-bold">Juliana S.</p>
+                                <p class="text-sm text-gray-500" data-lang="testimonial1Role">Dona, Salão Bella Mulher</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <p class="text-gray-600" data-lang="testimonial1Quote">"O Studio Gestor transformou a administração do meu salão. Antes eu perdia horas com planilhas, agora tenho tudo organizado com alguns cliques. O controle de estoque e o faturamento me deram uma visão clara do meu negócio!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://i.pravatar.cc/150?img=2" alt="Foto de Marcos P.">
+                            <div>
+                                <p class="font-bold">Marcos P.</p>
+                                <p class="text-sm text-gray-500" data-lang="testimonial2Role">Proprietário, Barbearia Style</p>
+                            </div>
+                        </div>
+                         <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <p class="text-gray-600" data-lang="testimonial2Quote">"Simplesmente fantástico. O sistema é muito intuitivo e fácil de usar. A função de marketing por WhatsApp para enviar lembretes diminuiu muito o número de faltas. Recomendo para todos!"</p>
+                    </div>
+                     <!-- Testimonial 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4 object-cover" src="https://i.ibb.co/W4pbvhZd/Gemini-Generated-Image-y631hy631hy631hy.png" alt="Foto de Carla F., cabeleireira">
+                            <div>
+                                <p class="font-bold">Carla F.</p>
+                                <p class="text-sm text-gray-500" data-lang="testimonial3Role">Cabeleireira, Salão Fios de Ouro</p>
+                            </div>
+                        </div>
+                         <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <p class="text-gray-600" data-lang="testimonial3Quote">"O suporte é muito atencioso e o programa atende todas as minhas necessidades. O melhor investimento que fiz para o meu espaço de estética. A organização dos agendamentos ficou impecável."</p>
+                    </div>
+                     <!-- Testimonial 4 -->
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="w-12 h-12 rounded-full mr-4" src="https://i.pravatar.cc/150?img=4" alt="Foto de Ricardo L.">
+                            <div>
+                                <p class="font-bold">Ricardo L.</p>
+                                <p class="text-sm text-gray-500" data-lang="testimonial4Role">Gerente, Studio Hair & Co.</p>
+                            </div>
+                        </div>
+                         <div class="flex text-yellow-400 mb-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                        </div>
+                        <p class="text-gray-600" data-lang="testimonial4Quote">"Finalmente um sistema que não é complicado! Consigo ver o faturamento por profissional e gerenciar o estoque sem dor de cabeça. A equipe toda se adaptou super rápido."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-lang="faqTitle">Perguntas Frequentes</h2>
+                    <p class="text-gray-600 mt-2" data-lang="faqSubtitle">Tire suas dúvidas antes de comprar.</p>
+                </div>
+                <div class="space-y-6">
+                     <!-- FAQ Item 1 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+                        <summary class="font-semibold text-lg" data-lang="faq1Question">Como funciona o pagamento?</summary>
+                        <p class="mt-4 text-gray-600" data-lang="faq1Answer">O pagamento é uma assinatura mensal recorrente. Enquanto sua assinatura estiver ativa, você tem acesso a todos os recursos e atualizações.</p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+                        <summary class="font-semibold text-lg" data-lang="faq2Question">Em quantos computadores posso instalar?</summary>
+                        <p class="mt-4 text-gray-600" data-lang="faq2Answer">A licença padrão é válida para a instalação em um computador. Se precisar usar em mais de uma máquina, entre em contato conosco para conhecer nossos pacotes para múltiplos usuários.</p>
+                    </details>
+                     <!-- FAQ Item 4 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+                        <summary class="font-semibold text-lg" data-lang="faq4Question">Precisa de internet para funcionar?</summary>
+                        <p class="mt-4 text-gray-600" data-lang="faq4Answer">Sim, o Studio Gestor precisa de uma conexão constante com a internet para funcionar, pois utiliza um banco de dados online. Isso garante que suas informações estejam sempre seguras e sincronizadas.</p>
+                    </details>
+                     <!-- FAQ Item 5 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+                        <summary class="font-semibold text-lg" data-lang="faq5Question">Como funciona o suporte?</summary>
+                        <p class="mt-4 text-gray-600" data-lang="faq5Answer">Oferecemos suporte técnico completo e gratuito por e-mail e através do nosso grupo exclusivo de suporte no WhatsApp, onde você pode tirar dúvidas rapidamente com nossa equipe e outros usuários. Além disso, temos uma biblioteca completa de vídeos tutoriais ensinando a usar todas as funções do programa passo a passo.</p>
+                    </details>
+                     <!-- FAQ Item 6 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm cursor-pointer">
+                        <summary class="font-semibold text-lg" data-lang="faq6Question">Como é a instalação do programa?</summary>
+                        <p class="mt-4 text-gray-600" data-lang="faq6Answer">A instalação é super simples! Não há necessidade de instaladores complexos. Basta extrair os arquivos para uma pasta em seu computador e executar o programa. É rápido e fácil para começar.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-8 md:space-y-0">
+                <!-- Logo e Slogan -->
+                <div>
+                    <a href="#" class="text-2xl font-bold">Studio Gestor</a>
+                    <p class="mt-2 text-gray-400" data-lang="footerSlogan">Simplificando a gestão do seu negócio.</p>
+                </div>
+
+                <!-- Informações do Desenvolvedor -->
+                <div class="flex items-center">
+                    <img class="w-16 h-16 rounded-full mr-4 border-2 border-purple-400" src="https://i.ibb.co/d0G8LqNv/Gemini-Generated-Image-ygefctygefctygef.png" alt="Foto de Átila Nascimento">
+                    <div>
+                        <p class="font-semibold text-lg">Átila Nascimento</p>
+                        <p class="text-sm text-gray-400">SEO e Desenvolvedor do Studio Gestor</p>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div>
+                    <p>&copy; 2024 Studio Gestor. <span data-lang="footerRights">Todos os direitos reservados.</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            pt: {
+                pageTitle: "Studio Gestor - Software de Gestão para Salões de Beleza",
+                navFeatures: "Recursos",
+                navPricing: "Preços",
+                navTestimonials: "Depoimentos",
+                navFaq: "FAQ",
+                heroTitle: "O Sistema Completo para Gerenciar seu Salão de Beleza",
+                heroSubtitle: "Agendamentos, clientes, estoque, faturamento e marketing em um só lugar. Simplifique sua gestão e foque no que realmente importa.",
+                heroCtaTrial: "Testar por 7 Dias Grátis",
+                featuresTitle: "Tudo que você precisa para crescer",
+                featuresSubtitle: "Recursos poderosos e fáceis de usar para levar seu negócio ao próximo nível.",
+                feature1Title: "Agenda Inteligente",
+                feature1Desc: "Organize seus horários, evite conflitos e visualize os compromissos do dia, semana e mês com facilidade.",
+                feature2Title: "Gestão de Clientes Completa",
+                feature2Desc: "Mantenha um histórico detalhado de cada cliente, com contatos, preferências e observações importantes.",
+                feature3Title: "Controle de Estoque Automático",
+                feature3Desc: "Dê baixa automática nos produtos usados em cada serviço e receba alertas de estoque baixo para nunca mais faltar nada.",
+                feature4Title: "Relatórios Financeiros",
+                feature4Desc: "Acompanhe seu faturamento diário, semanal e mensal com relatórios claros e precisos para tomar as melhores decisões.",
+                feature5Title: "Marketing via WhatsApp",
+                feature5Desc: "Envie lembretes de agendamento e campanhas promocionais em massa diretamente para o WhatsApp dos seus clientes.",
+                feature6Title: "Gestão de Equipe e Serviços",
+                feature6Desc: "Cadastre seus profissionais, defina os serviços oferecidos com seus respectivos preços e organize sua operação.",
+                pricingTitle: "Planos flexíveis para seu sucesso",
+                pricingSubtitle: "Escolha o plano ideal para o seu negócio, com acesso completo a todos os recursos.",
+                planName: "Plano Completo",
+                planDesc: "Acesso ilimitado a todos os recursos e atualizações.",
+                paymentTerm: "/ mês",
+                featureCheck1: "Clientes ilimitados",
+                featureCheck2: "Agendamentos ilimitados",
+                featureCheck3: "Controle de estoque",
+                featureCheck4: "Relatórios e Faturamento",
+                featureCheck5: "Ferramentas de Marketing",
+                featureCheck6: "Atualizações contínuas",
+                trialButton: "Testar 7 Dias Grátis",
+                testimonialsTitle: "Amado por donos de salão em todo o país",
+                testimonialsSubtitle: "Veja o que nossos clientes estão dizendo sobre o Studio Gestor.",
+                testimonial1Role: "Dona, Salão Bella Mulher",
+                testimonial1Quote: "\"O Studio Gestor transformou a administração do meu salão. Antes eu perdia horas com planilhas, agora tenho tudo organizado com alguns cliques. O controle de estoque e o faturamento me deram uma visão clara do meu negócio!\"",
+                testimonial2Role: "Proprietário, Barbearia Style",
+                testimonial2Quote: "\"Simplesmente fantástico. O sistema é muito intuitivo e fácil de usar. A função de marketing por WhatsApp para enviar lembretes diminuiu muito o número de faltas. Recomendo para todos!\"",
+                testimonial3Role: "Cabeleireira, Salão Fios de Ouro",
+                testimonial3Quote: "\"O suporte é muito atencioso e o programa atende todas as minhas necessidades. O melhor investimento que fiz para o meu espaço de estética. A organização dos agendamentos ficou impecável.\"",
+                testimonial4Role: "Gerente, Studio Hair & Co.",
+                testimonial4Quote: "\"Finalmente um sistema que não é complicado! Consigo ver o faturamento por profissional e gerenciar o estoque sem dor de cabeça. A equipe toda se adaptou super rápido.\"",
+                faqTitle: "Perguntas Frequentes",
+                faqSubtitle: "Tire suas dúvidas antes de comprar.",
+                faq1Question: "Como funciona o pagamento?",
+                faq1Answer: "O pagamento é uma assinatura mensal recorrente. Enquanto sua assinatura estiver ativa, você tem acesso a todos os recursos e atualizações.",
+                faq2Question: "Em quantos computadores posso instalar?",
+                faq2Answer: "A licença padrão é válida para a instalação em um computador. Se precisar usar em mais de uma máquina, entre em contato conosco para conhecer nossos pacotes para múltiplos usuários.",
+                faq3Question: "Quais são os requisitos do sistema?",
+                faq3Answer: "O Studio Gestor é um programa leve e foi projetado para funcionar na maioria dos computadores com sistema operacional Windows 7, 8, 10 ou 11.",
+                faq4Question: "Precisa de internet para funcionar?",
+                faq4Answer: "Sim, o Studio Gestor precisa de uma conexão constante com a internet para funcionar, pois utiliza um banco de dados online. Isso garante que suas informações estejam sempre seguras e sincronizadas.",
+                faq5Question: "Como funciona o suporte?",
+                faq5Answer: "Oferecemos suporte técnico completo e gratuito por e-mail e através do nosso grupo exclusivo de suporte no WhatsApp, onde você pode tirar dúvidas rapidamente com nossa equipe e outros usuários. Além disso, temos uma biblioteca completa de vídeos tutoriais ensinando a usar todas as funções do programa passo a passo.",
+                faq6Question: "Como é a instalação do programa?",
+                faq6Answer: "A instalação é super simples! Não há necessidade de instaladores complexos. Basta extrair os arquivos para uma pasta em seu computador e executar o programa. É rápido e fácil para começar.",
+                footerSlogan: "Simplificando a gestão do seu negócio.",
+                footerRights: "Todos os direitos reservados."
+            },
+            en: {
+                pageTitle: "Studio Gestor - Management Software for Beauty Salons",
+                navFeatures: "Features",
+                navPricing: "Pricing",
+                navTestimonials: "Testimonials",
+                navFaq: "FAQ",
+                heroTitle: "The Complete System to Manage Your Beauty Salon",
+                heroSubtitle: "Appointments, clients, inventory, billing, and marketing all in one place. Simplify your management and focus on what truly matters.",
+                heroCtaTrial: "Start 7-Day Free Trial",
+                featuresTitle: "Everything you need to grow",
+                featuresSubtitle: "Powerful and easy-to-use features to take your business to the next level.",
+                feature1Title: "Smart Schedule",
+                feature1Desc: "Organize your appointments, avoid conflicts, and easily view your daily, weekly, and monthly commitments.",
+                feature2Title: "Complete Client Management",
+                feature2Desc: "Maintain a detailed history of each client, with contacts, preferences, and important notes.",
+                feature3Title: "Automatic Inventory Control",
+                feature3Desc: "Automatically deduct products used in each service and receive low stock alerts so you never run out of anything.",
+                feature4Title: "Financial Reports",
+                feature4Desc: "Track your daily, weekly, and monthly revenue with clear and accurate reports to make the best decisions.",
+                feature5Title: "WhatsApp Marketing",
+                feature5Desc: "Send appointment reminders and mass promotional campaigns directly to your clients' WhatsApp.",
+                feature6Title: "Team & Services Management",
+                feature6Desc: "Register your professionals, define the services offered with their respective prices, and organize your operation.",
+                pricingTitle: "Flexible plans for your success",
+                pricingSubtitle: "Choose the ideal plan for your business, with full access to all features.",
+                planName: "Complete Plan",
+                planDesc: "Unlimited access to all features and updates.",
+                paymentTerm: "/ month",
+                featureCheck1: "Unlimited clients",
+                featureCheck2: "Unlimited appointments",
+                featureCheck3: "Inventory control",
+                featureCheck4: "Reports and Billing",
+                featureCheck5: "Marketing Tools",
+                featureCheck6: "Continuous updates",
+                trialButton: "Start 7-Day Free Trial",
+                testimonialsTitle: "Loved by salon owners nationwide",
+                testimonialsSubtitle: "See what our customers are saying about Studio Gestor.",
+                testimonial1Role: "Owner, Bella Mulher Salon",
+                testimonial1Quote: "\"Studio Gestor transformed the management of my salon. I used to waste hours on spreadsheets, now I have everything organized with a few clicks. The inventory and billing control gave me a clear view of my business!\"",
+                testimonial2Role: "Owner, Style Barbershop",
+                testimonial2Quote: "\"Simply fantastic. The system is very intuitive and easy to use. The WhatsApp marketing feature for sending reminders has greatly reduced no-shows. I recommend it to everyone!\"",
+                testimonial3Role: "Hairdresser, Golden Strands Salon",
+                testimonial3Quote: "\"The support is very attentive and the program meets all my needs. The best investment I made for my beauty space. The appointment organization is now flawless.\"",
+                testimonial4Role: "Manager, Studio Hair & Co.",
+                testimonial4Quote: "\"Finally a system that isn't complicated! I can see the revenue per professional and manage inventory without a headache. The whole team adapted very quickly.\"",
+                faqTitle: "Frequently Asked Questions",
+                faqSubtitle: "Get your questions answered before you buy.",
+                faq1Question: "How does the payment work?",
+                faq1Answer: "Payment is a recurring monthly subscription. As long as your subscription is active, you have access to all features and updates.",
+                faq2Question: "On how many computers can I install it?",
+                faq2Answer: "The standard license is valid for installation on one computer. If you need to use it on more than one machine, please contact us to learn about our multi-user packages.",
+                faq3Question: "What are the system requirements?",
+                faq3Answer: "Studio Gestor is a lightweight program designed to run on most computers with Windows 7, 8, 10, or 11 operating systems.",
+                faq4Question: "Does it need an internet connection to work?",
+                faq4Answer: "Yes, Studio Gestor requires a constant internet connection to operate, as it uses an online database. This ensures your information is always secure and synchronized.",
+                faq5Question: "How does support work?",
+                faq5Answer: "We offer full, free technical support via email and through our exclusive WhatsApp support group, where you can quickly resolve questions with our team and other users. Additionally, we have a complete library of video tutorials teaching you how to use every feature of the program step-by-step.",
+                faq6Question: "How is the program installed?",
+                faq6Answer: "Installation is super simple! No complex installers are needed. Just extract the files to a folder on your computer and run the program. It's quick and easy to get started.",
+                footerSlogan: "Simplifying your business management.",
+                footerRights: "All rights reserved."
+            },
+            es: {
+                pageTitle: "Studio Gestor - Software de Gestión para Salones de Belleza",
+                navFeatures: "Características",
+                navPricing: "Precios",
+                navTestimonials: "Testimonios",
+                navFaq: "FAQ",
+                heroTitle: "El Sistema Completo para Gestionar tu Salón de Belleza",
+                heroSubtitle: "Citas, clientes, inventario, facturación y marketing en un solo lugar. Simplifica tu gestión y céntrate en lo que de verdad importa.",
+                heroCtaTrial: "Probar 7 Días Gratis",
+                featuresTitle: "Todo lo que necesitas para crecer",
+                featuresSubtitle: "Funciones potentes y fáciles de usar para llevar tu negocio al siguiente nivel.",
+                feature1Title: "Agenda Inteligente",
+                feature1Desc: "Organiza tus horarios, evita conflictos y visualiza los compromissos del día, semana y mes com facilidad.",
+                feature2Title: "Gestión de Clientes Completa",
+                feature2Desc: "Mantén un historial detallado de cada cliente, com contactos, preferencias y observaciones importantes.",
+                feature3Title: "Control de Inventario Automático",
+                feature3Desc: "Da de baja automáticamente los productos usados en cada servicio y recibe alertas de stock bajo para que nunca te falte nada.",
+                feature4Title: "Informes Financieros",
+                feature4Desc: "Sigue tu facturación diaria, semanal y mensual con informes claros y precisos para tomar las mejores decisiones.",
+                feature5Title: "Marketing por WhatsApp",
+                feature5Desc: "Envía recordatorios de citas y campañas promocionales masivas directamente al WhatsApp de tus clientes.",
+                feature6Title: "Gestión de Equipo y Servicios",
+                feature6Desc: "Registra a tus profesionales, define los servicios ofrecidos con sus respectivos precios y organiza tu operación.",
+                pricingTitle: "Planes flexibles para tu éxito",
+                pricingSubtitle: "Elige el plan ideal para tu negocio, con acceso completo a todas las características.",
+                planName: "Plan Completo",
+                planDesc: "Acceso ilimitado a todas las funciones y actualizaciones.",
+                paymentTerm: "/ mes",
+                featureCheck1: "Clientes ilimitados",
+                featureCheck2: "Citas ilimitadas",
+                featureCheck3: "Control de inventario",
+                featureCheck4: "Informes y Facturación",
+                featureCheck5: "Herramientas de Marketing",
+                featureCheck6: "Actualizaciones continuas",
+                trialButton: "Probar 7 Días Gratis",
+                testimonialsTitle: "Amado por dueños de salones en todo el país",
+                testimonialsSubtitle: "Mira lo que nuestros clientes dicen sobre Studio Gestor.",
+                testimonial1Role: "Dueña, Salón Bella Mujer",
+                testimonial1Quote: "\"Studio Gestor transformó la administración de mi salón. Antes perdía horas con hojas de cálculo, ahora tengo todo organizado con unos pocos clics. ¡El control de inventario y la facturación me dieron una visión clara de mi negocio!\"",
+                testimonial2Role: "Propietario, Barbería Style",
+                testimonial2Quote: "\"Simplemente fantástico. El sistema es muy intuitivo y fácil de usar. La función de marketing por WhatsApp para enviar recordatorios ha reducido mucho el número de ausencias. ¡Lo recomiendo a todos!\"",
+                testimonial3Role: "Peluquera, Salón Hilos de Oro",
+                testimonial3Quote: "\"El soporte es muy atento y el programa cumple con todas mis necesidades. La mejor inversión que he hecho para mi espacio de estética. La organización de las citas es ahora impecable.\"",
+                testimonial4Role: "Gerente, Studio Hair & Co.",
+                testimonial4Quote: "\"¡Finalmente un sistema que no es complicado! Puedo ver la facturación por profesional y gestionar el inventario sin dolores de cabeza. Todo el equipo se adaptó muy rápido.\"",
+                faqTitle: "Preguntas Frequentes",
+                faqSubtitle: "Resuelve tus dudas antes de comprar.",
+                faq1Question: "¿Cómo funciona el pago?",
+                faq1Answer: "El pago es una suscripción mensual recurrente. Mientras tu suscripción esté activa, tienes acceso a todas las funciones y actualizaciones.",
+                faq2Question: "¿En cuántos ordenadores puedo instalarlo?",
+                faq2Answer: "La licencia estándar es válida para la instalación en un ordenador. Si necesitas usarlo en más de una máquina, contáctanos para conocer nuestros paquetes para múltiples usuarios.",
+                faq3Question: "¿Cuáles son los requisitos del sistema?",
+                faq3Answer: "Studio Gestor es un programa ligero y está diseñado para funcionar en la mayoría de los ordenadores con sistema operativo Windows 7, 8, 10 u 11.",
+                faq4Question: "¿Se necesita internet para funcionar?",
+                faq4Answer: "Sí, Studio Gestor requiere una conexión a internet constante para funcionar, ya que utiliza una base de datos en línea. Esto garantiza que tu información esté siempre segura y sincronizada.",
+                faq5Question: "¿Cómo funciona el soporte?",
+                faq5Answer: "Oferecemos suporte técnico completo e gratuito por e-mail e através do nosso grupo exclusivo de suporte no WhatsApp, onde você pode tirar dúvidas rapidamente com nossa equipe e outros usuários. Além disso, temos uma completa biblioteca de vídeos tutoriais que te ensinam a usar cada função do programa passo a passo.",
+                faq6Question: "¿Cómo es la instalación del programa?",
+                faq6Answer: "¡La instalación es súper sencilla! No se necesitan instaladores complejos. Simplemente extrae los archivos en una carpeta de tu ordenador y ejecuta el programa. Es rápido y fácil para empezar.",
+                footerSlogan: "Simplificando la gestión de tu negocio.",
+                footerRights: "Todos los derechos reservados."
+            }
+        };
+
+        const prices = {
+            pt: { from: "379,90", to: "125,00" },
+            en: { from: "79.99", to: "25.00" },
+            es: { from: "74.99", to: "22.00" }
+        };
+        
+        const languageSelector = document.getElementById('languageSelector');
+        
+        function setLanguage(lang) {
+            // Set HTML lang attribute
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+
+            // Update all elements with data-lang attribute
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update price
+            const priceBlock = document.getElementById('price-block');
+            if (priceBlock && prices[lang]) {
+                const fromText = { pt: 'De', en: 'From', es: 'De' }[lang];
+                const toText = { pt: 'por', en: 'for', es: 'por' }[lang];
+                const currency = { pt: 'R$', en: '$', es: '€' }[lang];
+                const priceInfo = prices[lang];
+                const term = translations[lang].paymentTerm;
+
+                priceBlock.innerHTML = `
+                    <p class="text-xl text-gray-500">
+                        ${fromText} <span class="line-through">${currency}${priceInfo.from}</span>
+                    </p>
+                    <div class="flex items-baseline justify-center">
+                        <span class="text-lg mr-2">${toText}</span>
+                        <span class="text-5xl font-extrabold text-purple-700">${currency}${priceInfo.to}</span>
+                        <span class="text-gray-500 ml-1">${term}</span>
+                    </div>
+                `;
+            }
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            languageSelector.value = lang;
+        }
+
+        languageSelector.addEventListener('change', (event) => {
+            setLanguage(event.target.value);
+        });
+
+        // Auto-detect language on initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                setLanguage(savedLang);
+                return;
+            }
+
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('es')) {
+                setLanguage('es');
+            } else if (browserLang.startsWith('en')) {
+                setLanguage('en');
+            } else {
+                setLanguage('pt'); // Default to Portuguese
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
